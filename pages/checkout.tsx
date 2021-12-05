@@ -1,8 +1,8 @@
 function Checkout() {
   return (
-    <div>
+    <>
       {/* <!-- Checkout Content --> */}
-      <section className="checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">
+      <section className="checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30" >
         <div className="container-fluid">
           <div className="logo text-md-center text-start pb-50">
             <a className="" href="/#">
@@ -74,8 +74,8 @@ function Checkout() {
               Payment</a>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </>
   )
 }
 
