@@ -129,8 +129,8 @@ function completeCheckout() {
           </div>
           <div className="button-group d-flex flex-column mx-auto">
             <a className="btn btn-dashboard fw-medium text-lg text-white rounded-pill mb-16"
-              href="../member/overview.html" role="button">My Dashboard</a>
-            <a className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill" href="#"
+              href="/member" role="button">My Dashboard</a>
+            <a className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill" href="/#"
               role="button">WhatsApp ke Admin</a>
           </div>
         </div>
