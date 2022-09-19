@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import GameItem from '../../molecules/game-item'
-import axios from "axios";
+import { getFeaturedGame } from '../../../services/player';
 
 export default function FeatureGame() {
   const [gameList, setGameList] = useState([]);
 
-  useEffect(async () => {
-    const res = await axios.get('https://tokogames.herokuapp.com/api/v1/players/landingpage')
-    console.log('data: ', res.data.data);
-    const data = res.data.data;
-    setGameList(data);
+  const getFeatureGameList = useCallback(async () => {
+    const data = await getFeaturedGame();
+    setGameList(data)
+  }, [getFeaturedGame])
+
+  useEffect(() => {
+    getFeatureGameList()
   }, []);
   return (
     <section className="featured-game pt-50 pb-50">
