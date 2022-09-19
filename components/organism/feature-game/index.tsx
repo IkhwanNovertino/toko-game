@@ -34,7 +34,9 @@ export default function FeatureGame() {
               key={item._id}
               thumbnail={`${API_IMG}/${item.thumbnail}`}
               title={item.name}
-              category={item.category.name} />
+              category={item.category.name}
+              id={item._id}
+            />
           ))}
         </div>
       </div>
