@@ -1,13 +1,15 @@
 import React from 'react'
+import { NumericFormat } from 'react-number-format';
 
-interface NominalItemProps {
+interface NominalItem {
   nominalID: string;
-  coinName: string;
   coinQuantity: number;
-  price: number
+  coinName: string;
+  price: number;
 }
 
-function NominalItem(props: NominalItemProps) {
+
+function NominalItem(props: NominalItem) {
   const { nominalID, coinQuantity, coinName, price } = props;
   return (
     <label className="col-lg-4 col-sm-6 ps-md-15 pe-md-15 pt-md-15 pb-md-15 pt-10 pb-10"
@@ -15,7 +17,7 @@ function NominalItem(props: NominalItemProps) {
       <input className="d-none" type="radio" id={nominalID} name="topup" value={nominalID} />
       <div className="detail-card">
         <div className="d-flex justify-content-between">
-          <p className="text-3xl color-palette-1 m-0"><span className="fw-medium">{coinQuantity}</span>
+          <p className="text-3xl color-palette-1 m-0"><span className="fw-medium">{coinQuantity} </span>
             {coinName}
           </p>
           <svg id="icon-check" width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -25,7 +27,15 @@ function NominalItem(props: NominalItemProps) {
               strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="text-lg color-palette-1 m-0">{price}</p>
+        <p className="text-lg color-palette-1 m-0">
+          <NumericFormat
+            value={price}
+            prefix={'Rp. '}
+            displayType='text'
+            thousandSeparator='.'
+            decimalSeparator=','
+          />
+        </p>
       </div>
     </label>
   )

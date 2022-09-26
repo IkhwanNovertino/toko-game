@@ -1,8 +1,15 @@
 import React from 'react';
+import { NominalsTypes, PaymentTypes } from '../../../services/data-types';
 import NominalItem from './NominalItem';
 import PaymentItem from './PaymentItem';
 
-export default function TopUpForm() {
+interface TopUpFormProps {
+  nominals: NominalsTypes[];
+  payments: PaymentTypes[];
+}
+
+export default function TopUpForm(props: TopUpFormProps) {
+  const { nominals, payments } = props;
   return (
     <form action="./checkout.html" method="POST">
       <div className="pt-md-50 pt-30">
@@ -16,9 +23,15 @@ export default function TopUpForm() {
       <div className="pt-md-50 pb-md-50 pt-30 pb-20">
         <p className="text-lg fw-medium color-palette-1 mb-md-10 mb-0">Nominal Top Up</p>
         <div className="row justify-content-between">
-          <NominalItem nominalID={'123'} coinName={'Diamond'} coinQuantity={24} price={50000} />
-          <NominalItem nominalID={'124'} coinName={'Diamond'} coinQuantity={24} price={50000} />
-          <NominalItem nominalID={'125'} coinName={'Diamond'} coinQuantity={24} price={50000} />
+          {nominals.map((nominal) => (
+            <NominalItem
+              key={nominal._id}
+              nominalID={nominal._id}
+              coinName={nominal.coinName}
+              coinQuantity={nominal.coinQuantity}
+              price={nominal.price} />
+
+          ))}
           <div className="col-lg-4 col-sm-6">
             {/* <!--Blank--> */}
           </div>
@@ -28,9 +41,15 @@ export default function TopUpForm() {
         <p className="text-lg fw-medium color-palette-1 mb-md-10 mb-0">Payment Method</p>
         <fieldset id="paymentMethod">
           <div className="row justify-content-between">
-            <PaymentItem bankID={'234'} type={'Transfer'} name={'BCA'} />
-            <PaymentItem bankID={'235'} type={'Transfer'} name={'Mandiri'} />
-            <PaymentItem bankID={'241'} type={'VISA'} name={'Credit Card'} />
+            {payments.map((payment) => (
+              payment.banks.map((bank) => (
+                <PaymentItem
+                  key={bank._id}
+                  bankID={bank._id}
+                  type={payment.type}
+                  name={bank.bankName} />
+              ))
+            ))}
             <div className="col-lg-4 col-sm-6">
               {/* <!--Blank--> */}
             </div>
