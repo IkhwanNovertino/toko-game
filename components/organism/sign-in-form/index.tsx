@@ -1,7 +1,35 @@
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React, { useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { setLogin } from '../../../services/auth';
 
 export default function SigninForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const router = useRouter()
+
+  const onSubmit = async () => {
+    const data = {
+      email,
+      password
+    }
+
+    if (!email || !password) {
+      toast.error('email dan password wajib diisi !!!');
+    } else {
+      const response = await setLogin(data)
+      if (response.error) {
+        toast.error(response.message)
+      } else {
+        toast.success('Login success.')
+        router.push('/')
+      }
+    }
+  }
+
   return (
     <>
       <div className="pt-50">
@@ -11,9 +39,18 @@ export default function SigninForm() {
         >
           Email Address
         </label>
-        <input type="email" className="form-control rounded-pill text-lg" id="email" name="email"
-          aria-describedby="email" placeholder="Enter your email address" />
+        <input
+          type="email"
+          className="form-control rounded-pill text-lg"
+          id="email"
+          name="email"
+          aria-describedby="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
       </div>
+
       <div className="pt-30">
         <label
           htmlFor="password"
@@ -21,18 +58,27 @@ export default function SigninForm() {
         >
           Password
         </label>
-        <input type="password" className="form-control rounded-pill text-lg" id="password"
-          name="password" aria-describedby="password" placeholder="Your password" />
+        <input
+          type="password"
+          className="form-control rounded-pill text-lg"
+          id="password"
+          name="password"
+          aria-describedby="password"
+          placeholder="Your password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
       </div>
+
       <div className="button-group d-flex flex-column mx-auto pt-50">
-        <Link href="/">
-          <a
-            className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
-            role="button"
-          >
-            Continue to Sign In
-          </a>
-        </Link>
+        <button
+          type='button'
+          className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
+          onClick={onSubmit}
+        >
+          Continue to Sign In
+        </button>
+
         <Link href="/sign-up">
           <a
             className="btn btn-sign-up fw-medium text-lg color-palette-1 rounded-pill"
@@ -42,6 +88,8 @@ export default function SigninForm() {
           </a>
         </Link>
       </div>
+
+      <ToastContainer />
     </>
   )
 }

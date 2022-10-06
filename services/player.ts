@@ -12,8 +12,17 @@ export const getFeaturedGame = async () => {
   return axiosResponse.data
 }
 
-export const getDetailVoucher = async(id) => {
+export const getDetailVoucher = async(id: string) => {
   const END_POINT = `players/${id}/detail`
+
+  const res = await axios.get(`${ROOT_API}/${API_VERSION}/${END_POINT}`)
+  const axiosResponse = res.data;
+  
+  return axiosResponse.data
+}
+
+export const getGameCategory = async () => {
+  const END_POINT = 'players/category'
 
   const res = await axios.get(`${ROOT_API}/${API_VERSION}/${END_POINT}`)
   const axiosResponse = res.data;
