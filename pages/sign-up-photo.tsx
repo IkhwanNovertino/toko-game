@@ -11,7 +11,7 @@ function SignupPhoto() {
   const [categories, setCategories] = useState([]);
   const [favorite, setFavorite] = useState('');
   const [image, setImage] = useState('');
-  const [imagePreview, setImagePreview] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
 
   const [localForm, setLocalForm] = useState({
     name: '',
@@ -33,12 +33,12 @@ function SignupPhoto() {
 
   useEffect(() => {
     const getLocalForm = localStorage.getItem('user-form');
-    setLocalForm(JSON.parse(getLocalForm));
+    setLocalForm(JSON.parse(getLocalForm!));
   }, [])
 
   const onSubmit = async () => {
     const getLocalForm = await localStorage.getItem('user-form');
-    const userForm = JSON.parse(getLocalForm);
+    const userForm = JSON.parse(getLocalForm!);
 
     const data = new FormData();
 
