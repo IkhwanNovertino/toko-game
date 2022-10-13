@@ -6,14 +6,18 @@ interface NominalItem {
   coinQuantity: number;
   coinName: string;
   price: number;
+  onChange: () => void;
 }
 
 
 function NominalItem(props: NominalItem) {
-  const { nominalID, coinQuantity, coinName, price } = props;
+  const { nominalID, coinQuantity, coinName, price, onChange } = props;
   return (
-    <label className="col-lg-4 col-sm-6 ps-md-15 pe-md-15 pt-md-15 pb-md-15 pt-10 pb-10"
-      htmlFor={nominalID}>
+    <label
+      className="col-lg-4 col-sm-6 ps-md-15 pe-md-15 pt-md-15 pb-md-15 pt-10 pb-10"
+      htmlFor={nominalID}
+      onChange={onChange}
+    >
       <input className="d-none" type="radio" id={nominalID} name="topup" value={nominalID} />
       <div className="detail-card">
         <div className="d-flex justify-content-between">

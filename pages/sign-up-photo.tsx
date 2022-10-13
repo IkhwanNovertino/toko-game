@@ -80,7 +80,7 @@ function SignupPhoto() {
                       name="avatar"
                       accept="image/png, image/jpeg"
                       onChange={(event) => {
-                        const img = event!.target!.files![0];
+                        const img: any = event!.target!.files![0];
                         setImagePreview(URL.createObjectURL(img));
                         return setImage(img);
 
