@@ -17,6 +17,8 @@ import '../styles/edit-profile.css';
 import '../styles/navbar-log-in.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // eslint-disable-next-line func-names
 const MyApp = function ({ Component, pageProps }: AppProps) {
@@ -49,6 +51,7 @@ const MyApp = function ({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
+      <ToastContainer />
     </>
   );
 };

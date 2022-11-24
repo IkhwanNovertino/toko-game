@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { setSignUp } from '../services/auth';
 import { getGameCategory } from '../services/player';
 import 'react-toastify/dist/ReactToastify.css';
@@ -131,7 +131,6 @@ function SignupPhoto() {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </section>
   );
 }
