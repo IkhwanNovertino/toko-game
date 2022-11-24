@@ -1,6 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
-import Illustration from './illustration'
+import React from 'react';
+import Illustration from './illustration';
 
 export default function MainBanner() {
   return (
@@ -55,5 +54,5 @@ export default function MainBanner() {
         </div>
       </div>
     </section>
-  )
+  );
 }

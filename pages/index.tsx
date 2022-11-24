@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
-import AOS from "aos"
+import AOS from "aos";
 import Navbar from '../components/organism/navbar';
 import MainBanner from '../components/organism/main-banner';
 import TransactionStep from '../components/organism/transaction-step';
@@ -10,11 +10,10 @@ import Story from '../components/organism/story';
 import Footer from '../components/organism/footer';
 // import styles from '../styles/Home.module.css';
 
-// eslint-disable-next-line func-names
 const Home: NextPage = function () {
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
   return (
     <>
       <Navbar />

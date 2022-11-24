@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface TopUpItemProps {
   type: 'desktop' | 'mobile';
@@ -12,9 +12,8 @@ interface TopUpItemProps {
 
 }
 export default function TopUpItem(props: TopUpItemProps) {
-
   const { type, data } = props;
-  const API_IMG = process.env.NEXT_PUBLIC_IMG
+  const API_IMG = process.env.NEXT_PUBLIC_IMG;
 
   if (type === 'desktop') {
     return (
@@ -28,7 +27,7 @@ export default function TopUpItem(props: TopUpItemProps) {
           {data.category.name}
         </p>
       </div>
-    )
+    );
   }
   return (
     <div className="row align-items-center">
@@ -40,8 +39,12 @@ export default function TopUpItem(props: TopUpItemProps) {
         <h2 className="text-xl fw-bold color-palette-1 text-start mb-10">
           {data.name}
         </h2>
-        <p className="text-sm color-palette-2 text-start mb-0">Category: {data.category.name}</p>
+        <p className="text-sm color-palette-2 text-start mb-0">
+          Category:
+          {' '}
+          {data.category.name}
+        </p>
       </div>
     </div>
-  )
+  );
 }

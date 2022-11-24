@@ -1,4 +1,3 @@
-
 export interface CategoryTypes {
   _id: string;
   name: string;
@@ -51,4 +50,3 @@ export interface JWTPayloadTypes {
   player: UserTypes;
   iat: number;
 }
-

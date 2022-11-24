@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface RowProps {
   label: string,
@@ -15,6 +15,6 @@ export default function Row(props: Partial<RowProps>) {
       <span className={`purchase-details ${className}`}>
         {value}
       </span>
-    </p >
-  )
+    </p>
+  );
 }

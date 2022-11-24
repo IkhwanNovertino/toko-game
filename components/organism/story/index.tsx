@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 export default function Story() {
   return (
@@ -33,5 +33,5 @@ export default function Story() {
         </div>
       </div>
     </section>
-  )
+  );
 }

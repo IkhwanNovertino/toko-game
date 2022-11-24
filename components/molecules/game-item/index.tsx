@@ -1,7 +1,7 @@
-import Image from 'next/image'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
-
+import React from 'react';
 
 export interface GameItemProps {
   title: string;
@@ -10,8 +10,10 @@ export interface GameItemProps {
   id: string;
 }
 export default function GameItem(props: GameItemProps) {
+  const {
+    title, category, thumbnail, id,
+  } = props;
 
-  const { title, category, thumbnail, id } = props;
   return (
     <div className="featured-game-card position-relative">
       <Link href={`/detail/${id}`}>
@@ -33,5 +35,5 @@ export default function GameItem(props: GameItemProps) {
         </a>
       </Link>
     </div>
-  )
+  );
 }

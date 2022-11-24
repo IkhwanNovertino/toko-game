@@ -1,7 +1,7 @@
 import cx from 'classnames';
-import Image from 'next/image'
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 interface MenuItemProps {
   title: string;
@@ -10,11 +10,13 @@ interface MenuItemProps {
   icon: 'ic-menu-overview' | 'ic-menu-transactions' | 'ic-menu-messages' | 'ic-menu-card' | 'ic-menu-reward' | 'ic-menu-setting' | 'ic-menu-logout';
 }
 export default function MenuItem(props: Partial<MenuItemProps>) {
-  const { title, icon, active, href } = props;
+  const {
+    title, icon, active, href,
+  } = props;
   const classItem = cx({
-    'item': true,
+    item: true,
     'mb-30': true,
-    'active': active,
+    active,
   });
 
   return (
@@ -28,5 +30,5 @@ export default function MenuItem(props: Partial<MenuItemProps>) {
         </Link>
       </p>
     </div>
-  )
+  );
 }

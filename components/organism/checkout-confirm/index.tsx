@@ -1,11 +1,15 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
 
 export default function CheckoutConfirmation() {
   return (
     <>
-      <label className="checkbox-label text-lg color-palette-1">I have transferred the money
+      <label
+        className="checkbox-label text-lg color-palette-1"
+      >
+        I have transferred the money
         <input type="checkbox" />
-        <span className="checkmark"></span>
+        <span className="checkmark" />
       </label>
       <div className="d-md-block d-flex flex-column w-100 pt-50">
         <a
@@ -17,5 +21,5 @@ export default function CheckoutConfirmation() {
         </a>
       </div>
     </>
-  )
+  );
 }

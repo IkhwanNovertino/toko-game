@@ -1,4 +1,8 @@
-import { route } from 'next/dist/server/router';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/function-component-definition */
+/* eslint-disable import/order */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { BanksTypes, NominalsTypes, PaymentTypes } from '../../../services/data-types';
@@ -15,38 +19,37 @@ interface TopUpFormProps {
 export default function TopUpForm(props: TopUpFormProps) {
   const { nominals, payments } = props;
 
-  const [verifyID, setVerifyID] = useState('')
-  const [bankAccountName, setBankAccountName] = useState('')
-  const [nominalItem, setNominalItem] = useState({})
-  const [paymentItem, setPaymentItem] = useState({})
-  const router = useRouter()
+  const [verifyID, setVerifyID] = useState('');
+  const [bankAccountName, setBankAccountName] = useState('');
+  const [nominalItem, setNominalItem] = useState({});
+  const [paymentItem, setPaymentItem] = useState({});
+  const router = useRouter();
 
   const onNominalItemChange = (data: NominalsTypes) => setNominalItem(data);
 
   const onPaymentItemChange = (payment: PaymentTypes, bank: BanksTypes) => {
     const data = {
       payment,
-      bank
-    }
+      bank,
+    };
     setPaymentItem(data);
-  }
+  };
 
   const onSubmit = () => {
-    console.log('verifyID: ', verifyID);
-    console.log('bankAccountName: ', bankAccountName);
-    console.log('nominalItem: ', nominalItem);
-    console.log('paymentItem: ', paymentItem);
+    // console.log('verifyID: ', verifyID);
+    // console.log('bankAccountName: ', bankAccountName);
+    // console.log('nominalItem: ', nominalItem);
+    // console.log('paymentItem: ', paymentItem);
     if (!verifyID || !bankAccountName || !nominalItem || !paymentItem) {
       toast.error('Isi semua data!');
     } else {
       const datas = {
-        verifyID, bankAccountName, nominalItem, paymentItem
-      }
-      localStorage.setItem('data-topup', JSON.stringify(datas))
-      router.push('/checkout')
+        verifyID, bankAccountName, nominalItem, paymentItem,
+      };
+      localStorage.setItem('data-topup', JSON.stringify(datas));
+      router.push('/checkout');
     }
-
-  }
+  };
 
   return (
     <form action="./checkout.html" method="POST">
@@ -135,8 +138,5 @@ export default function TopUpForm(props: TopUpFormProps) {
         </button>
       </div>
     </form>
-  )
+  );
 }
-
-
-

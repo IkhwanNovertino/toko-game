@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import GameItem from '../../molecules/game-item'
+import React, { useCallback, useEffect, useState } from 'react';
+import GameItem from '../../molecules/game-item';
 import { getFeaturedGame } from '../../../services/player';
 import { GameListTypes } from '../../../services/data-types';
 
@@ -8,14 +8,14 @@ export default function FeatureGame() {
 
   const getFeatureGameList = useCallback(async () => {
     const data = await getFeaturedGame();
-    setGameList(data)
-  }, [getFeaturedGame])
+    setGameList(data);
+  }, [getFeaturedGame]);
 
   useEffect(() => {
-    getFeatureGameList()
+    getFeatureGameList();
   }, []);
 
-  const API_IMG = process.env.NEXT_PUBLIC_IMG
+  const API_IMG = process.env.NEXT_PUBLIC_IMG;
 
   return (
     <section className="featured-game pt-50 pb-50">
@@ -28,7 +28,8 @@ export default function FeatureGame() {
         </h2>
         <div
           className="d-flex flex-row flex-lg-wrap overflow-setting justify-content-lg-between gap-lg-3 gap-4"
-          data-aos="fade-up">
+          data-aos="fade-up"
+        >
           {gameList.map((item: GameListTypes) => (
             <GameItem
               key={item._id}
@@ -41,5 +42,5 @@ export default function FeatureGame() {
         </div>
       </div>
     </section>
-  )
+  );
 }

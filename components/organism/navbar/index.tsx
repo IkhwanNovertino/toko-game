@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import Auth from './auth'
-import Menu from './menu'
-import ToggleMenu from './toggle-menu'
+import Image from 'next/image';
+import Auth from './auth';
+import Menu from './menu';
+import ToggleMenu from './toggle-menu';
 
 function Navbar() {
   return (
@@ -26,7 +26,7 @@ function Navbar() {
         </div>
       </nav>
     </section>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

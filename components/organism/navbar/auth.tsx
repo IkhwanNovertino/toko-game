@@ -1,49 +1,54 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Cookies from "js-cookie";
 import jwtDecode from 'jwt-decode';
-import { JWTPayloadTypes, UserTypes } from '../../../services/data-types';
 import { useRouter } from 'next/router';
-
+import { JWTPayloadTypes, UserTypes } from '../../../services/data-types';
 
 export default function auth() {
-
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({
-    avatar: ''
-  })
+    avatar: '',
+  });
 
   const router = useRouter();
 
   useEffect(() => {
-    const token = Cookies.get('token')
+    const token = Cookies.get('token');
     if (token) {
       const jwtToken = atob(token);
       const payload: JWTPayloadTypes = jwtDecode(jwtToken);
       const dataUserFromPayload: UserTypes = payload.player;
 
       const IMG = process.env.NEXT_PUBLIC_IMG;
-      dataUserFromPayload.avatar = `${IMG}/${dataUserFromPayload.avatar}`
+      dataUserFromPayload.avatar = `${IMG}/${dataUserFromPayload.avatar}`;
 
-      setUser(dataUserFromPayload)
+      setUser(dataUserFromPayload);
       setIsLogin(true);
       // console.log('dataUserFromPayload: ', dataUserFromPayload);
     }
-  }, [])
+  }, []);
 
   const onLogOut = () => {
-    Cookies.remove('token')
-    router.push('/')
-    setIsLogin(false)
-  }
+    Cookies.remove('token');
+    router.push('/');
+    setIsLogin(false);
+  };
 
   if (isLogin) {
     return (
       <li className="nav-item my-auto dropdown d-flex">
-        <div className="vertical-line d-lg-block d-none"></div>
+        <div className="vertical-line d-lg-block d-none" />
         <div>
-          <a className="dropdown-toggle ms-lg-40" href="#" role="button" id="dropdownMenuLink"
-            data-bs-toggle="dropdown" aria-expanded="false"
+          <a
+            className="dropdown-toggle ms-lg-40"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
             <img src={user.avatar} className="rounded-circle" width="40" height="40" alt="" />
           </a>
@@ -63,15 +68,17 @@ export default function auth() {
                 <a className="dropdown-item text-lg color-palette-2" href="#">Account Settings</a>
               </Link>
             </li>
-            <li onClick={onLogOut}>
+            <li
+              onClick={onLogOut}
+            >
               <a className="dropdown-item text-lg color-palette-2">Log Out</a>
             </li>
 
           </ul>
         </div>
       </li>
-    )
-  };
+    );
+  }
 
   return (
     <li className="nav-item my-auto">
@@ -79,11 +86,11 @@ export default function auth() {
         <a
           className="btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill"
           href="./src/sign-in.html"
-          role="button">
+          role="button"
+        >
           Sign In
         </a>
       </Link>
     </li>
-
-  )
+  );
 }

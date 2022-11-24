@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react'
+import React from 'react';
 
 interface TableRowProps {
   title: string;
@@ -11,14 +11,16 @@ interface TableRowProps {
 }
 
 export default function TableRow(props: TableRowProps) {
-  const { title, category, item, price, status, image } = props;
+  const {
+    title, category, item, price, status, image,
+  } = props;
 
   const statusClass = classNames({
     "float-start icon-status": true,
-    "pending": status === 'Pending',
-    "success": status === 'Success',
-    "failed": status === 'Failed',
-  })
+    pending: status === 'Pending',
+    success: status === 'Success',
+    failed: status === 'Failed',
+  });
   return (
     <tr className="align-middle">
       <th scope="row">
@@ -39,18 +41,21 @@ export default function TableRow(props: TableRowProps) {
         </div>
       </th>
       <td>
-        <p className="fw-medium color-palette-1 m-0">{item} Gold</p>
+        <p className="fw-medium color-palette-1 m-0">
+          {item}
+          {' '}
+          Gold
+        </p>
       </td>
       <td>
         <p className="fw-medium text-start color-palette-1 m-0">{price}</p>
       </td>
       <td>
         <div>
-          <span className={statusClass}></span>
+          <span className={statusClass} />
           <p className="fw-medium text-start color-palette-1 m-0 position-relative">{status}</p>
         </div>
       </td>
     </tr>
-  )
-
+  );
 }

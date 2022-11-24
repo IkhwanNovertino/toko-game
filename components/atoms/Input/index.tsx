@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export interface InputProps {
   label: string;
@@ -20,8 +20,9 @@ export default function Input(props: InputProps) {
         name="name"
         aria-describedby="name"
         placeholder="Enter your name"
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...nativeProps}
       />
     </>
-  )
+  );
 }

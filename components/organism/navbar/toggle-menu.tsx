@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function ToggleMenu() {
   return (
@@ -10,9 +10,10 @@ export default function ToggleMenu() {
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation">
+        aria-label="Toggle navigation"
+      >
         <span className="navbar-toggler-icon" />
       </button>
     </div>
-  )
+  );
 }

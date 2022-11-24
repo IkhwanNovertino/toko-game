@@ -1,6 +1,6 @@
-import React from 'react'
-import ButtonTab from './button-tab'
-import TableRow from './table-row'
+import React from 'react';
+import ButtonTab from './button-tab';
+import TableRow from './table-row';
 
 export default function TransactionContent() {
   return (
@@ -14,10 +14,10 @@ export default function TransactionContent() {
         <div className="row mt-30 mb-20">
           <div className="col-lg-12 col-12 main-content">
             <div id="list_status_title">
-              <ButtonTab title={'All Trx'} active={true} />
-              <ButtonTab title={'Success'} active={false} />
-              <ButtonTab title={'Pending'} active={false} />
-              <ButtonTab title={'Failed'} active={false} />
+              <ButtonTab title="All Trx" active />
+              <ButtonTab title="Success" active={false} />
+              <ButtonTab title="Pending" active={false} />
+              <ButtonTab title="Failed" active={false} />
             </div>
           </div>
         </div>
@@ -36,28 +36,36 @@ export default function TransactionContent() {
               </thead>
               <tbody id="list_status_item">
                 <TableRow
-                  title={'Mobile Legends: The New Battle 2021'}
-                  category={'Desktop'}
+                  title="Mobile Legends: The New Battle 2021"
+                  category="Desktop"
                   item={200}
-                  price={290000} status={'Pending'} image={'overview-1'}
+                  price={290000}
+                  status="Pending"
+                  image="overview-1"
                 />
                 <TableRow
-                  title={'Call of Duty: Modern'}
-                  category={'Desktop'}
+                  title="Call of Duty: Modern"
+                  category="Desktop"
                   item={550}
-                  price={740000} status={'Success'} image={'overview-2'}
+                  price={740000}
+                  status="Success"
+                  image="overview-2"
                 />
                 <TableRow
-                  title={'Clash of Clans'}
-                  category={'Mobile'}
+                  title="Clash of Clans"
+                  category="Mobile"
                   item={100}
-                  price={120000} status={'Failed'} image={'overview-3'}
+                  price={120000}
+                  status="Failed"
+                  image="overview-3"
                 />
                 <TableRow
-                  title={'The Royal Game'}
-                  category={'Mobile'}
+                  title="The Royal Game"
+                  category="Mobile"
                   item={225}
-                  price={200000} status={'Pending'} image={'overview-4'}
+                  price={200000}
+                  status="Pending"
+                  image="overview-4"
                 />
               </tbody>
             </table>
@@ -65,5 +73,5 @@ export default function TransactionContent() {
         </div>
       </div>
     </main>
-  )
+  );
 }

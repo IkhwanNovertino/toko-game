@@ -1,39 +1,40 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { setLogin } from '../../../services/auth';
 import Cookies from 'js-cookie';
+import { setLogin } from '../../../services/auth';
+
 export default function SigninForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const router = useRouter()
+  const router = useRouter();
 
   const onSubmit = async () => {
     const data = {
       email,
-      password
-    }
+      password,
+    };
 
     if (!email || !password) {
       toast.error('email dan password wajib diisi !!!');
     } else {
-      const response = await setLogin(data)
+      const response = await setLogin(data);
       if (response.error) {
-        toast.error(response.message)
+        toast.error(response.message);
       } else {
-        toast.success('Login success.')
+        toast.success('Login success.');
 
         const { token } = response.data;
         const tokenBase64 = btoa(token);
-        Cookies.set('token', tokenBase64, { expires: 1 })
+        Cookies.set('token', tokenBase64, { expires: 1 });
 
-        router.push('/')
+        router.push('/');
       }
     }
-  }
+  };
 
   return (
     <>
@@ -77,7 +78,7 @@ export default function SigninForm() {
 
       <div className="button-group d-flex flex-column mx-auto pt-50">
         <button
-          type='button'
+          type="button"
           className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
           onClick={onSubmit}
         >
@@ -96,5 +97,5 @@ export default function SigninForm() {
 
       <ToastContainer />
     </>
-  )
+  );
 }

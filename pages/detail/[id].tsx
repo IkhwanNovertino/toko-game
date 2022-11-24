@@ -12,26 +12,26 @@ export default function Detail() {
     name: '',
     thumbnail: '',
     category: {
-      name: ''
-    }
-  })
+      name: '',
+    },
+  });
   const [nominals, setNominals] = useState([]);
   const [payments, setPayments] = useState([]);
 
   const getVoucherDetailAPI = useCallback(async (id) => {
     const data = await getDetailVoucher(id);
     // console.log('data: ', data);
-    setDataItem(data.detail)
+    setDataItem(data.detail);
     localStorage.setItem('data-item', JSON.stringify(data.detail));
-    setNominals(data.detail.nominals)
-    setPayments(data.payment)
-  }, [])
+    setNominals(data.detail.nominals);
+    setPayments(data.payment);
+  }, []);
 
   useEffect(() => {
     if (isReady) {
-      getVoucherDetailAPI(query.id)
+      getVoucherDetailAPI(query.id);
     }
-  }, [isReady])
+  }, [isReady]);
   return (
     <>
       <Navbar />
@@ -57,4 +57,4 @@ export default function Detail() {
       <Footer />
     </>
   );
-};
+}

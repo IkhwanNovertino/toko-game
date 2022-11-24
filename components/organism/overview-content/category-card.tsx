@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/image';
 import { ReactNode } from 'react';
 
 interface CategoryProps {
@@ -24,5 +24,5 @@ export default function Category(props: CategoryProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

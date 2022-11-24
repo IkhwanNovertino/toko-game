@@ -1,6 +1,6 @@
-import React from 'react'
-import Category from './category-card'
-import TableRow from './table-row'
+import React from 'react';
+import Category from './category-card';
+import TableRow from './table-row';
 
 export default function OverviewContent() {
   return (
@@ -11,14 +11,20 @@ export default function OverviewContent() {
           <p className="text-lg fw-medium color-palette-1 mb-14">Top Up Categories</p>
           <div className="main-content">
             <div className="row">
-              <Category icon='ic-category-desktop' nominal={18000500}>
-                Game <br /> Desktop
+              <Category icon="ic-category-desktop" nominal={18000500}>
+                Game
+                <br />
+                Desktop
               </Category>
-              <Category icon='ic-category-mobile' nominal={8455000}>
-                Game <br /> Mobile
+              <Category icon="ic-category-mobile" nominal={8455000}>
+                Game
+                <br />
+                Mobile
               </Category>
-              <Category icon='ic-category-desktop' nominal={5000000}>
-                Other <br /> Categories
+              <Category icon="ic-category-desktop" nominal={5000000}>
+                Other
+                <br />
+                Categories
               </Category>
             </div>
           </div>
@@ -37,36 +43,36 @@ export default function OverviewContent() {
               </thead>
               <tbody>
                 <TableRow
-                  title={'Mobile Legends: The New Battle 2021'}
-                  category={'Desktop'}
+                  title="Mobile Legends: The New Battle 2021"
+                  category="Desktop"
                   item={200}
                   price={290000}
-                  status={'Pending'}
-                  image={'overview-1'}
+                  status="Pending"
+                  image="overview-1"
                 />
                 <TableRow
-                  title={'Call of Duty: Modern'}
-                  category={'Desktop'}
+                  title="Call of Duty: Modern"
+                  category="Desktop"
                   item={550}
                   price={740000}
-                  status={'Success'}
-                  image={'overview-2'}
+                  status="Success"
+                  image="overview-2"
                 />
                 <TableRow
-                  title={'Clash of Clans'}
-                  category={'Mobile'}
+                  title="Clash of Clans"
+                  category="Mobile"
                   item={100}
                   price={120000}
-                  status={'Failed'}
-                  image={'overview-3'}
+                  status="Failed"
+                  image="overview-3"
                 />
                 <TableRow
-                  title={'The Royal Game'}
-                  category={'Mobile'}
+                  title="The Royal Game"
+                  category="Mobile"
                   item={225}
                   price={200000}
-                  status={'Pending'}
-                  image={'overview-4'}
+                  status="Pending"
+                  image="overview-4"
                 />
               </tbody>
             </table>
@@ -74,5 +80,5 @@ export default function OverviewContent() {
         </div>
       </div>
     </main>
-  )
+  );
 }

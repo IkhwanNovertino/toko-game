@@ -1,4 +1,3 @@
-import axios from 'axios';
 import callAPI from '../config/api';
 import { LoginTypes } from './data-types';
 
@@ -11,16 +10,16 @@ export const setSignUp = async (data: FormData) => {
   return callAPI({
     url,
     method: 'POST',
-    data
-  })
-}
+    data,
+  });
+};
 
-export const setLogin = async(data: LoginTypes) => {
+export const setLogin = async (data: LoginTypes) => {
   const url = `${ROOT_API}/${API_VERSION}/auth/signin`;
 
   return callAPI({
     url,
     method: 'POST',
-    data
-  })
-}
+    data,
+  });
+};
