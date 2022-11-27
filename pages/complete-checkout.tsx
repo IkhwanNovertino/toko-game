@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 function completeCheckout() {
@@ -236,17 +237,20 @@ function completeCheckout() {
           </p>
         </div>
         <div className="button-group d-flex flex-column mx-auto">
-          <a
-            className="btn btn-dashboard fw-medium text-lg text-white rounded-pill mb-16"
-            href="/member"
-            role="button"
-          >
-            My Dashboard
-          </a>
+          <Link href="/member">
+            <a
+              className="btn btn-dashboard fw-medium text-lg text-white rounded-pill mb-16"
+              role="button"
+            >
+              My Dashboard
+            </a>
+          </Link>
           <a
             className="btn btn-whatsapp fw-medium text-lg color-palette-1 rounded-pill"
-            href="/#"
+            target="_blank"
+            href="https://wa.me/6282250870821?text=Halo,%20saya%20sudah%20melakukan%20pembayaran%20voucher%20game"
             role="button"
+            rel="noreferrer"
           >
             WhatsApp ke Admin
           </a>
