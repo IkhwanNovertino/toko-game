@@ -9,7 +9,6 @@ export default function FeatureGame() {
 
   const getFeatureGameList = useCallback(async () => {
     const { data } = await getFeaturedGame();
-    console.log('data:', data);
 
     setGameList(data);
   }, [getFeaturedGame]);
