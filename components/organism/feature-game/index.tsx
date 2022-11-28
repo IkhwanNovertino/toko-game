@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useCallback, useEffect, useState } from 'react';
 import GameItem from '../../molecules/game-item';
 import { getFeaturedGame } from '../../../services/player';
@@ -7,7 +8,9 @@ export default function FeatureGame() {
   const [gameList, setGameList] = useState([]);
 
   const getFeatureGameList = useCallback(async () => {
-    const data = await getFeaturedGame();
+    const { data } = await getFeaturedGame();
+    console.log('data:', data);
+
     setGameList(data);
   }, [getFeaturedGame]);
 

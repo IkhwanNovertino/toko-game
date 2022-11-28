@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUpForm() {
@@ -31,7 +31,6 @@ export default function SignUpForm() {
 
   return (
     <>
-      <ToastContainer />
       <div className="pt-50">
         <label
           htmlFor="name"

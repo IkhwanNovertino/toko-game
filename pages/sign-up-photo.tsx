@@ -20,7 +20,7 @@ function SignupPhoto() {
   const router = useRouter();
 
   const getGameCategoryAPI = useCallback(async () => {
-    const data = await getGameCategory();
+    const { data } = await getGameCategory();
 
     setCategories(data);
     setFavorite(data[0]._id);

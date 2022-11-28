@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import Footer from "../../components/organism/footer";
@@ -19,13 +20,13 @@ export default function Detail() {
   const [payments, setPayments] = useState([]);
 
   const getVoucherDetailAPI = useCallback(async (id) => {
-    const data = await getDetailVoucher(id);
+    const { data } = await getDetailVoucher(id);
     // console.log('data: ', data);
     setDataItem(data.detail);
     localStorage.setItem('data-item', JSON.stringify(data.detail));
     setNominals(data.detail.nominals);
     setPayments(data.payment);
-  }, []);
+  }, [getDetailVoucher]);
 
   useEffect(() => {
     if (isReady) {
