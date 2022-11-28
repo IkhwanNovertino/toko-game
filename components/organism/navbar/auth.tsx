@@ -55,17 +55,17 @@ export default function auth() {
           <ul className="dropdown-menu border-0" aria-labelledby="dropdownMenuLink">
             <li>
               <Link href="/member">
-                <a className="dropdown-item text-lg color-palette-2" href="#">My Profile</a>
+                <a className="dropdown-item text-lg color-palette-2">My Profile</a>
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <a className="dropdown-item text-lg color-palette-2" href="#">Wallet</a>
+              <Link href="/">
+                <a className="dropdown-item text-lg color-palette-2">Wallet</a>
               </Link>
             </li>
             <li>
               <Link href="/member/edit-profile">
-                <a className="dropdown-item text-lg color-palette-2" href="#">Account Settings</a>
+                <a className="dropdown-item text-lg color-palette-2">Account Settings</a>
               </Link>
             </li>
             <li
