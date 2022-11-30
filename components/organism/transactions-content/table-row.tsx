@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 import React from 'react';
 import { NumericFormat } from 'react-number-format';
 
@@ -9,10 +10,11 @@ interface TableRowProps {
   price: number;
   status: string;
   image: string;
+  id: string;
 }
 export default function TableRow(props: TableRowProps) {
   const {
-    image, title, category, item, price, status,
+    image, title, category, item, price, status, id,
   } = props;
 
   const statusClass = classNames({
@@ -62,13 +64,13 @@ export default function TableRow(props: TableRowProps) {
         </div>
       </td>
       <td>
-        <a
-          href="/member/transaksi/detail"
-          className="btn btn-status rounded-pill text-sm"
-        >
-          Details
-
-        </a>
+        <Link href={`/member/transaksi/${id}`}>
+          <a
+            className="btn btn-status rounded-pill text-sm"
+          >
+            Details
+          </a>
+        </Link>
       </td>
     </tr>
   );

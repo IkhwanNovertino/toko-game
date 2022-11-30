@@ -74,12 +74,14 @@ export default function TransactionContent() {
               <tbody id="list_status_item">
                 {transaction.map((item: TransactionsTypes) => (
                   <TableRow
+                    key={item._id}
                     image={`${IMG}/${item.historyVoucherTopup.thumbnail}`}
                     title={item.historyVoucherTopup.gameName}
                     category={item.historyVoucherTopup.category}
                     item={`${item.historyVoucherTopup.coinQuantity} ${item.historyVoucherTopup.coinName}`}
                     price={item.value}
                     status={item.status}
+                    id={item._id}
                   />
                 ))}
               </tbody>
