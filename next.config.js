@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['tokogames.herokuapp.com']
-  }
-}
+    domains: ["storegg-bwa.onrender.com"],
+  },
+};

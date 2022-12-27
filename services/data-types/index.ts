@@ -1,3 +1,5 @@
+// import { type } from "os";
+
 export interface CategoryTypes {
   _id: string;
   name: string;
@@ -75,9 +77,20 @@ export interface HistoryVoucherTopupTypes {
   thumbnail: string,
 }
 
+export interface HistoryPaymentTypes {
+  name: string,
+  type: string,
+  bankName: string,
+  noRekening: string,
+}
+
 export interface TransactionsTypes {
   _id: string,
   value: number,
   status: string,
+  accountUser: string,
+  name: string,
+  tax: number,
   historyVoucherTopup: HistoryVoucherTopupTypes,
+  historyPayment: HistoryPaymentTypes,
 }
