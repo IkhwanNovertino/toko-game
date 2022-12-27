@@ -11,7 +11,7 @@ interface TransactionDetailProps {
 
 function TransactionDetail(props: TransactionDetailProps) {
   const { transactionDetail } = props;
-  console.log('data: ', transactionDetail);
+  // console.log('data: ', transactionDetail);
 
   return (
     <>
