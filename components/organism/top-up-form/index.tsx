@@ -1,14 +1,9 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/function-component-definition */
-/* eslint-disable import/order */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { BanksTypes, NominalsTypes, PaymentTypes } from '../../../services/data-types';
 import NominalItem from './NominalItem';
 import PaymentItem from './PaymentItem';
-import { toast } from 'react-toastify';
 
 interface TopUpFormProps {
   nominals: NominalsTypes[];
@@ -35,10 +30,6 @@ export default function TopUpForm(props: TopUpFormProps) {
   };
 
   const onSubmit = () => {
-    // console.log('verifyID: ', verifyID);
-    // console.log('bankAccountName: ', bankAccountName);
-    // console.log('nominalItem: ', nominalItem);
-    // console.log('paymentItem: ', paymentItem);
     if (!verifyID || !bankAccountName || !nominalItem || !paymentItem) {
       toast.error('Isi semua data!');
     } else {
@@ -83,9 +74,7 @@ export default function TopUpForm(props: TopUpFormProps) {
             />
 
           ))}
-          <div className="col-lg-4 col-sm-6">
-            {/* <!--Blank--> */}
-          </div>
+          <div className="col-lg-4 col-sm-6" />
         </div>
       </div>
       <div className="pb-md-50 pb-20">

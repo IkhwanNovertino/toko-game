@@ -11,7 +11,6 @@ interface TransactionDetailProps {
 
 function TransactionDetail(props: TransactionDetailProps) {
   const { transactionDetail } = props;
-  // console.log('data: ', transactionDetail);
 
   return (
     <>
@@ -37,7 +36,6 @@ interface GetServerSideProps {
 export async function getServerSideProps({ req, params }: GetServerSideProps) {
   const { token } = req.cookies;
   const { idTrx } = params;
-  // console.log('idTrx: >>>', idTrx);
   if (!token) {
     return {
       redirect: {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 export default function CheckoutItem() {
-  // eslint-disable-next-line no-unused-vars
   const [dataItem, setDataItem] = useState({
     thumbnail: '',
     name: '',
@@ -14,7 +13,6 @@ export default function CheckoutItem() {
     const dataFromLocal = localStorage.getItem('data-item');
     const dataItemLocal = JSON.parse(dataFromLocal!);
     setDataItem(dataItemLocal);
-    // console.log('dataItem: ', dataItemLocal);
   }, []);
 
   const API_IMG = process.env.NEXT_PUBLIC_IMG;

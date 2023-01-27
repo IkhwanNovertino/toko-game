@@ -1,7 +1,7 @@
 import React from 'react';
 import { NumericFormat } from 'react-number-format';
 
-interface NominalItem {
+interface NominalItemProps {
   nominalID: string;
   coinQuantity: number;
   coinName: string;
@@ -9,8 +9,7 @@ interface NominalItem {
   onChange: () => void;
 }
 
-// eslint-disable-next-line no-redeclare
-function NominalItem(props: NominalItem) {
+function NominalItem(props: NominalItemProps) {
   const {
     nominalID, coinQuantity, coinName, price, onChange,
   } = props;

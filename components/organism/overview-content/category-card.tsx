@@ -16,7 +16,6 @@ export default function Category(props: CategoryProps) {
         <div className="d-flex align-items-center mb-24">
           <Image src={`/icon/${icon}.svg`} width={60} height={60} />
           <p className="color-palette-1 mb-0 ms-12">{children}</p>
-          {/* <p className="color-palette-1 mb-0 ms-12">Game<br /> Desktop</p> */}
         </div>
         <div>
           <p className="text-sm color-palette-2 mb-1">Total Spent</p>
@@ -29,7 +28,6 @@ export default function Category(props: CategoryProps) {
               decimalSeparator=","
             />
           </p>
-          {/* <p className="text-2xl color-palette-1 fw-medium m-0">Rp 18.000.500</p> */}
         </div>
       </div>
     </div>

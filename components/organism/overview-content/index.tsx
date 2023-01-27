@@ -11,7 +11,6 @@ export default function OverviewContent() {
 
   const getOverviewMember = useCallback(async () => {
     const { data } = await getMemberOverview();
-    // console.log('data: ', data.count);
     setCount(data.count);
     setDatas(data.data);
   }, [getMemberOverview]);
@@ -67,31 +66,6 @@ export default function OverviewContent() {
                     image={`${IMG}/${item.historyVoucherTopup.thumbnail}`}
                   />
                 ))}
-
-                {/* <TableRow
-                  title="Call of Duty: Modern"
-                  category="Desktop"
-                  item={550}
-                  price={740000}
-                  status="Success"
-                  image="overview-2"
-                />
-                <TableRow
-                  title="Clash of Clans"
-                  category="Mobile"
-                  item={100}
-                  price={120000}
-                  status="Failed"
-                  image="overview-3"
-                />
-                <TableRow
-                  title="The Royal Game"
-                  category="Mobile"
-                  item={225}
-                  price={200000}
-                  status="Pending"
-                  image="overview-4"
-                /> */}
               </tbody>
             </table>
           </div>

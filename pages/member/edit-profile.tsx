@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie';
 import jwtDecode from 'jwt-decode';
 import { useRouter } from 'next/router';
-// import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import Input from '../../components/atoms/Input';
@@ -16,7 +15,6 @@ function EditProfile() {
     name: '',
     email: '',
   });
-  // const [image, setImage] = useState('');
   const [imagePreview, setImagePreview] = useState('');
   const router = useRouter();
 

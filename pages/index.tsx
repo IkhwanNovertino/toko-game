@@ -8,7 +8,6 @@ import FeatureGame from '../components/organism/feature-game';
 import Reached from '../components/organism/reached';
 import Story from '../components/organism/story';
 import Footer from '../components/organism/footer';
-// import styles from '../styles/Home.module.css';
 
 const Home: NextPage = function () {
   useEffect(() => {

@@ -31,11 +31,10 @@ export default function CheckoutDetail() {
     const dataFromLocal = localStorage.getItem('data-topup');
     const dataTopUpLocal = JSON.parse(dataFromLocal!);
     setDataTopUp(dataTopUpLocal);
-    console.log('dataItem: ', dataTopUpLocal);
   }, []);
 
   const itemPrice = dataTopUp.nominalItem.price;
-  const tax = dataTopUp.nominalItem.price * (10 / 100);
+  const tax = itemPrice * (10 / 100);
   const totalPrice = itemPrice + tax;
 
   return (

@@ -18,10 +18,8 @@ export default function Profile() {
 
       const IMG = process.env.NEXT_PUBLIC_IMG;
       dataUserFromPayload.avatar = `${IMG}/${dataUserFromPayload.avatar}`;
-      // console.log("payload: ", dataUserFromPayload);
 
       setUser(dataUserFromPayload);
-      // console.log("user: ", user);
     }
   }, []);
 

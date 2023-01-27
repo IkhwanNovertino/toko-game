@@ -9,12 +9,8 @@ interface CheckoutProps {
   user: UserTypes;
 }
 
-const Checkout = function (props: CheckoutProps) {
-  // eslint-disable-next-line no-unused-vars
-  const { user } = props;
-
-  // console.log('user: ', user);
-
+// eslint-disable-next-line no-unused-vars
+const Checkout = function ({ user }: CheckoutProps) {
   return (
     <>
       {/* <!-- Checkout Content --> */}
@@ -65,8 +61,6 @@ export async function getServerSideProps({ req }: GetServerSideProps) {
 
   const payload: JWTPayloadTypes = jwtDecode(jwtToken);
   const dataUserFromPayload: UserTypes = payload.player;
-
-  // console.log(jwtToken);
 
   const IMG = process.env.NEXT_PUBLIC_IMG;
   dataUserFromPayload.avatar = `${IMG}/${dataUserFromPayload.avatar}`;

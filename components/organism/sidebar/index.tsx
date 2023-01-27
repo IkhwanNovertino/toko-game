@@ -25,8 +25,6 @@ export default function SideBar(props: SideBarProps) {
           <MenuItem title="Overview" icon="ic-menu-overview" href="/member" active={activeMenu === 'overview'} />
           <MenuItem title="Transactions" icon="ic-menu-transactions" href="/member/transaksi" active={activeMenu === 'transactions'} />
           <MenuItem title="Messages" icon="ic-menu-messages" href="/member" />
-          {/* <MenuItem title="Card" icon="ic-menu-card" href="/member" />
-          <MenuItem title="Rewards" icon="ic-menu-reward" href="/member" /> */}
           <MenuItem title="Setting" icon="ic-menu-setting" href="/member/edit-profile" active={activeMenu === 'settings'} />
           <MenuItem title="Log Out" icon="ic-menu-logout" onClick={onLogout} />
         </div>

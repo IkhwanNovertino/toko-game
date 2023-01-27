@@ -14,8 +14,6 @@ export default function CheckoutConfirmation() {
     const dataItem = JSON.parse(dataItemLocal!);
     const dataTopUp = JSON.parse(dataTopUpLocal!);
 
-    // console.log('submit', check);
-
     if (!check) {
       toast.error('Pastikan telah melakukan pembayaran!');
     } else {
@@ -32,11 +30,11 @@ export default function CheckoutConfirmation() {
       if (response.error) {
         toast.error(response.message);
       } else {
-        // toast.success('Login success.');
         router.push('/complete-checkout');
+        localStorage.removeItem('data-topup');
+        localStorage.removeItem('data-item');
       }
     }
-    // console.log('data: ', data);
   };
   return (
     <>

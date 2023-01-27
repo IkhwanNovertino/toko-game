@@ -27,7 +27,6 @@ export default function auth() {
 
       setUser(dataUserFromPayload);
       setIsLogin(true);
-      // console.log('dataUserFromPayload: ', dataUserFromPayload);
     }
   }, []);
 
