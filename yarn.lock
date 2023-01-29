@@ -1461,6 +1461,13 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.0.6.tgz"
   "version" "12.0.6"
 
+"@next/eslint-plugin-next@^13.1.6":
+  "integrity" "sha512-o7cauUYsXjzSJkay8wKjpKJf2uLzlggCsGUkPu3lP09Pv97jYlekTC20KJrjQKmSv5DXV0R/uks2ZXhqjNkqAw=="
+  "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.1.6.tgz"
+  "version" "13.1.6"
+  dependencies:
+    "glob" "7.1.7"
+
 "@next/eslint-plugin-next@12.0.6":
   "integrity" "sha512-MIBjPTlql+l9LTTse5HHhxAiFFpQG6FsQ46wQ2WDJFKjg7adE7DcbzUOpKPdkvgoK+RT/kJS23M3axSSEzKNYw=="
   "resolved" "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-12.0.6.tgz"

@@ -96,9 +96,6 @@ function EditProfile() {
               <div className="pt-30">
                 <Input label="Email Address" disabled value={user.email} />
               </div>
-              {/* <div className="pt-30">
-                <Input label="Phone" />
-              </div> */}
               <div className="button-group d-flex flex-column pt-50">
                 <button
                   type="button"
