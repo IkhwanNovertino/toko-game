@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useCallback, useEffect, useState } from 'react';
 import { TopupCategoriesTypes, TransactionsTypes } from '../../../services/data-types';
 import { getMemberOverview } from '../../../services/member';

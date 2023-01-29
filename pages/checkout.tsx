@@ -1,16 +1,9 @@
 import Image from "next/image";
-import jwtDecode from "jwt-decode";
 import CheckoutConfirmation from "../components/organism/checkout-confirm";
 import CheckoutDetail from "../components/organism/checkout-detail";
 import CheckoutItem from "../components/organism/checkout-item";
-import { JWTPayloadTypes, UserTypes } from "../services/data-types";
 
-interface CheckoutProps {
-  user: UserTypes;
-}
-
-// eslint-disable-next-line no-unused-vars
-const Checkout = function ({ user }: CheckoutProps) {
+const Checkout = function () {
   return (
     <>
       {/* <!-- Checkout Content --> */}
@@ -57,17 +50,7 @@ export async function getServerSideProps({ req }: GetServerSideProps) {
     };
   }
 
-  const jwtToken = Buffer.from(token, "base64").toString('ascii');
-
-  const payload: JWTPayloadTypes = jwtDecode(jwtToken);
-  const dataUserFromPayload: UserTypes = payload.player;
-
-  const IMG = process.env.NEXT_PUBLIC_IMG;
-  dataUserFromPayload.avatar = `${IMG}/${dataUserFromPayload.avatar}`;
-
   return {
-    props: {
-      user: dataUserFromPayload,
-    },
+    props: {},
   };
 }

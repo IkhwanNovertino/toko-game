@@ -2,9 +2,7 @@ import cx from 'classnames';
 import Link from 'next/link';
 
 interface MenuProps {
-  // wajib ada di navbar/index.tsx
   title: string;
-  // tidak wajib ada di navbar/index.tsx
   active?: boolean;
   href: string
 }

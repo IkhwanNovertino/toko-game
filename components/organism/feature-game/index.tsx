@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useCallback, useEffect, useState } from 'react';
 import GameItem from '../../molecules/game-item';
 import { getFeaturedGame } from '../../../services/player';

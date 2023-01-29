@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Cookies from "js-cookie";
@@ -84,7 +82,6 @@ export default function auth() {
       <Link href="/sign-in">
         <a
           className="btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill"
-          href="./src/sign-in.html"
           role="button"
         >
           Sign In

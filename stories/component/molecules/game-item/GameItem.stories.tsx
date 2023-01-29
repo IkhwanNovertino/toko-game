@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ComponentStory, Meta } from "@storybook/react";
 import GameItem, { GameItemProps } from "../../../../components/molecules/game-item";
 
@@ -6,6 +7,7 @@ export default {
   component: GameItem,
 } as Meta;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof GameItem> = (args: GameItemProps) => <GameItem {...args} />;
 
 export const Default = Template.bind({});
@@ -13,5 +15,5 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Super Mechs',
   category: 'Mobile',
-  thumbnail: '/img/Thumbnail-1.png'
-}
+  thumbnail: '/img/Thumbnail-1.png',
+};
